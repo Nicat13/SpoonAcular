@@ -1,0 +1,15 @@
+.RecipeImg {
+    width: 100%;
+}
+
+.Title {
+    color: #614124;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.ListWrapper {
+    padding: 15px;
+    font-weight: 600;
+    color: #614124;
+}

@@ -1,0 +1,25 @@
+.CardImg {
+    height: 250px;
+    object-fit: cover;
+}
+
+.CardBody {
+    height: 80px;
+}
+
+.RecipeCol {
+    margin-bottom: 18px;
+}
+
+.RecipeCard {
+    border-radius: 25px;
+    overflow: hidden;
+    transition: 0.3s;
+    cursor: pointer;
+    font-size: 19px;
+    border-color: #EDE6DB;
+}
+
+.RecipeCard:hover {
+    transform: scale(1.03);
+}

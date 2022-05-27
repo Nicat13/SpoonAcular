@@ -1,0 +1,53 @@
+.CuisineInput {
+    visibility: hidden;
+    width: 0px;
+}
+
+
+.CuisineInput:checked~.InputLabel {
+    border: 2px solid #9FC088;
+}
+
+
+.InputWrapper {
+    display: inline-block;
+    border-radius: 40px;
+    margin-right: 10px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.InputLabel {
+    padding: 14px 20px 14px 20px;
+    cursor: pointer;
+    border-radius: 40px;
+    background: #EDE6DB;
+    color: #614124;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.CuisineForm {
+    display: flex;
+    cursor: grab;
+    overflow-x: auto;
+    position: relative;
+}
+
+.Overlay {
+    position: absolute;
+    height: 56px;
+}
+
+.CuisineForm::-webkit-scrollbar {
+    display: none;
+}
+
+.CuisineForm {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
