@@ -41,9 +41,9 @@ function Recipe() {
             })
             .then(data => {
                 let response = [];
-                data.map(item => {
+                data.map((item) => (
                     response.push({ 'title': item.title, 'id': item.id, 'image': `https://spoonacular.com/recipeImages/${item.id}-556x370.jpg` })
-                })
+                ))
                 setSimilarRecipes(response);
                 setIsPending(false);
                 setError(null);

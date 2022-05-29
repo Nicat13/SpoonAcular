@@ -8,7 +8,7 @@ function RecipeInfo({ recipe }) {
         <>
             <Col lg="12" className='d-flex justify-content-center pb-5'><h5 className={styles.Title}>{recipe.title}</h5></Col>
             <Col xs="12" sm="12" md="12" lg="5">
-                <img className={styles.RecipeImg} src={recipe.image ? recipe.image : defaultimg} />
+                <img className={styles.RecipeImg} src={recipe.image ? recipe.image : defaultimg} alt="img" />
             </Col>
             <Col xs="12" sm="12" md="12" lg="7">
                 <div className={styles.ListWrapper}>
