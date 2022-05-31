@@ -7,7 +7,16 @@ const Recipes = ({ recipes, isPending, error }) => {
     return (
         <>
             {error && <div>{error}</div>}
-            {isPending && <Col lg="12" className='d-flex justify-content-center'><Spinner animation="grow" /></Col>}
+            {isPending && Array(9).fill(1).map((a) =>
+            (<Col className={`${styles.RecipeCol}`} xs="12" sm="12" md="12" lg="4" key={a}>
+                <Card className={`${styles.RecipeCard}`}>
+                    <div style={{ height: '250px' }} className='skeletonloader'></div>
+                    <Card.Body className={styles.CardBody}>
+                        <div style={{ height: '45px', borderRadius: '13px' }} className='skeletonloader'></div>
+                    </Card.Body>
+                </Card>
+            </Col>)
+            )}
             {
                 recipes && recipes.map((r) => (
                     <Col className={`${styles.RecipeCol}`} xs="12" sm="12" md="12" lg="4" key={r.id}>

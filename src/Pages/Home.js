@@ -38,13 +38,15 @@ const Home = () => {
                     return res.json();
                 })
                 .then(data => {
-                    if (query || cuisine) {
-                        dispatch(addRecipe(data.results))
-                    }
-                    else {
-                        dispatch(addRecipe(data.recipes))
-                    }
-                    setIsPending(false);
+                    setTimeout(() => {
+                        if (query || cuisine) {
+                            dispatch(addRecipe(data.results))
+                        }
+                        else {
+                            dispatch(addRecipe(data.recipes))
+                        }
+                        setIsPending(false);
+                    }, 1000);
                     setError(null);
                 })
                 .catch(err => {

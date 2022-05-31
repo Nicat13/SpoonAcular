@@ -13,6 +13,7 @@ function Recipe() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        setRecipe(null)
         const abortcont = new AbortController();
         fetch(`https://api.spoonacular.com/recipes/${slug}/information?apiKey=${process.env.REACT_APP_RESHAD}`, { signal: abortcont.signal })
             .then(res => {
@@ -22,7 +23,9 @@ function Recipe() {
                 return res.json();
             })
             .then(data => {
-                setRecipe(data)
+                setTimeout(() => {
+                    setRecipe(data)
+                }, 1000);
             })
             .catch(err => {
                 if (err.name === 'AbortError') {
@@ -44,8 +47,10 @@ function Recipe() {
                 data.map((item) => (
                     response.push({ 'title': item.title, 'id': item.id, 'image': `https://spoonacular.com/recipeImages/${item.id}-556x370.jpg` })
                 ))
-                setSimilarRecipes(response);
-                setIsPending(false);
+                setTimeout(() => {
+                    setSimilarRecipes(response);
+                    setIsPending(false);
+                }, 1000);
                 setError(null);
             })
             .catch(err => {
@@ -65,9 +70,9 @@ function Recipe() {
 
     return (
         <div className='Recipe'>
-            <Link style={{ color: '#614124', textDecoration: 'none', display: 'block', paddingBottom: '8px' }} to={`/`}>🡸Home</Link>
+            <Link style={{ color: '#614124', textDecoration: 'none', display: 'block', paddingBottom: '8px' }} to={`/`}>{'<'} Home</Link>
             <Row>
-                {recipe && <RecipeInfo recipe={recipe} />}
+                <RecipeInfo recipe={recipe} />
                 <h5 style={{ paddingTop: '40px', paddingBottom: '20px', color: '#614124', fontSize: '25px', fontWeight: '500' }}>Similar recipes</h5>
                 <Recipes recipes={similarRecipes} isPending={isPending} error={error} />
             </Row>
